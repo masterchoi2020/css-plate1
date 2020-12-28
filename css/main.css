@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+/* reset.css */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* common */
+
+.wrap {
+    font: 14px "Noto Sans KR", sans-serif;
+}
+
+.en {
+    font-family: "Exo 2", sans-serif;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+br.mo {
+    /* 차후 모바일 화면에서 사용할 수 있게 풀 예정 */
+    display: none;
+}
+
+/* header */
+header {
+    background: rgba(0,0,0,0.2);
+    width: 100%;
+
+    /* 높이와 line-hight의 크기를 맞추면 내부요소가 중앙으로 떨어진다.(공식처럼 사용됨)*/
+    /* line-hight는 텍스트 요소(linline요소) */
+    height: 100px;
+    line-height: 100px;
+
+    /* header가 absolute가 되면 붕~ 뜨면서 위로 올라온다.
+      z-index를 주면 main보다 앞으로 나온다.
+    */
+    /* position: absolute; */
+    position: fixed;
+    z-index: 10;
+}
+
+header .inner-header {
+    width: 1600px;
+    box-sizing: border-box;
+    /* background: skyblue; */
+    /* 박스 가운데 정렬: margin의 좌우 값을 auto로 지정 */
+    margin: 0 auto;
+}
+header .inner-header .logo {
+    float: left;
+    width: 200px;
+}
+/* 이미지를 조절할 때는 이미지 박스를 조절해서 크기 조절할 것(이미지 자체 수정하지 말것) */
+header .inner-header .logo img {
+    width: 100%;
+}
+header .inner-header .gnb {
+    float: left;
+    margin-left: 80px;
+}
+header .inner-header .gnb li {
+    float: left;
+    margin-right: 80px;
+}
+
+header .inner-header .gnb li a {
+    /* a태그를 블록으로 잡으면 영역이 박스처럼 되면서 사용자 편의성 증가  */
+    display: block;
+    color: #fff;
+    font-size: 16px;
+}
+header .inner-header .gnb li a:hover {
+    color: #ff8342;
+}
+
+header .inner-header .tnb {
+    float: right;
+}
+header .inner-header .tnb li {
+    float: left;
+    margin-right: 25px;
+}
+header .inner-header .tnb li a {
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+} 
+header .inner-header .tnb li:first-child a i,
+header .inner-header .tnb li:nth-child(2) a i
+ {
+    font-size: 20px;
+    margin-right: 8px;
+}
+header .inner-header .tnb li:last-child a {
+    display: block;
+    width: 105px;
+    line-height: 2;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    margin-top: 34px;
+}
+header .inner-header .tnb li:last-child a:hover {
+    background: #fff;
+    color: #ff8432;
+}
+header .inner-header .tnb li:last-child a i {
+    margin-left: 5px;
+}
+
+/* section main  */
+section.main {
+    /* device상관없이 뷰포트를 꽉차게 100vh 설정 */
+    height: 100vh;
+    background: url("../img/vis_4.jpg") no-repeat center / cover;
+    
+    /* 배경화면이 내 눈을 따라가는 듯한 효과 */
+    /* 단축속성 background: url("../img/vis_4.jpg") no-repeat center / cover fixed; */
+    background-attachment: fixed;
+    position: relative;
+}
+
+section.main .main-title {
+    /* 포지션을 absolute로 박스 한 가운데 정렬(공식처럼 사용)*/
+    position: absolute;
+    /* background: red; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #fff;
+    text-align: center;
+    /* text-shadow: x-offset y-offset blur scrollbar-shadow-color;
+        x-offset :그림자가 x축 방향으로 움직임
+        y-offset :그림자가 y축 방향으로 움직임
+        blur :값이 클 수록 흐려진다.
+    */
+    text-shadow: 10 0 5px rgba(0,0,0,0.7);
+}
+
+section.main .main-title h2 {
+    font-size: 55px;
+    margin-top: 20px;
+}
+section.main .main-title p {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+section.main .main-title .view {
+    /* db + tab */
+    display: block;
+    font-size: 15px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    width: 100px;
+    /* 박스 중앙정렬: margin의 좌우정렬 auto로 설정 */
+    margin: 0 auto;
+    padding: 8px 0;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+section.main .main-title .view::after {
+    content:"";
+    /* width: 100%; */
+    width: 0;
+    height: 100%;
+    background: rgba(255,255,255,0.4);
+    
+    /* float 또는 posion 설정하면 display는 자동으로 block으로 바뀐다니다. */
+    /* display: block; */
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    transition: 0.3s;
+}
+
+section.main .main-title .view:hover:after {
+    width: 100%;
+}
+
+/* section about 스타일링 */
+section.about {
+    background: #fff;
+    padding: 80px 0;
+}
+
+section.about .title {
+    color: #000;
+    text-align: center;
+}
+
+section.about .title h2 {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+section.about .title h2 span {
+    color: #ff8342;
+}
+
+section.about .title p {
+    font-size: 18px;
+    color: #555;
+}
+section.about ul {
+    /* background: red; */
+    width: 1400px;
+    margin: 30px auto;
+    border-bottom: 1px solid #ddd;
+}
+section.about ul li {
+    /* 자식에 float 설정하면 height가 없어진다.*/
+    float: left;
+    width: 33.333%;
+}
+section.about ul li a .img-box {
+    /* 이미지태그는 항상 박스에 넣어서 사용할 것 
+       만약, 사이즈 키울때 사이즈가 튀어나오는 것 방지가능
+    */
+    overflow: hidden;
+}
+section.about ul li a .img-box img {
+    width: 100%;
+    /* transition은 hover 전에 넣어주기 */
+    transition: 0.8s;
+}
+section.about ul li a:hover .img-box img {
+    /* 클릭시 1.2배 크기로 증가 */
+    transform: scale(1.2);
+}
+section.about ul li a .text {
+    padding: 25px;
+}
+section.about ul li a .text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+section.about ul li a .text p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+section.about ul li a .text p.more {
+    font-weight: 700;
+    /* 소문자를 대문자로 변환 */
+    text-transform: uppercase;
+    padding-left: 40px;
+    padding-top: 7px;
+    position: relative;
+}
+
+section.about ul li a .text p.more::before {
+    /* font-awsome 인라인요소 */
+     /*font-awsome의 텍스트 그림에 넣기  */
+    content: "\f30b";
+    font-family: "Font Awesome 5 Free";
+    line-height: 2;
+
+    /* display: block;  포지션쓰면 자동으로 block이 되므로 주석처리 */
+    width: 30px;
+    height: 30px;
+    background: #ff8342;
+    border-radius: 50px;
+    position: absolute;
+    left: 0;
+    top: 4px;
+
+}
+
+/* section innovation */
+section.innovation {
+    margin-bottom: 150px;
+}
+section.innovation .title {
+    color: #000;
+    text-align: center;
+}
+
+section.innovation .title h2 {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+section.innovation .title h2 span {
+    color: #ff8342;
+}
+section.innovation .title p {
+    font-size: 18px;color: #555;
+}
+section.innovation .img-box {
+    width: 1400px;
+    height: 540px;
+    background: url("../img/product_1.jpg") no-repeat center/cover;
+    margin: 50px auto 0;
+    position: relative;
+}
+section.innovation .img-box .inner {
+    background: #3a3c4e;
+    /* 부모박스(사진있는박스)의 80%설정 */
+    width: 80%;
+    /* position: absolute;
+    
+    /* border: 2px solid #000; */
+    position: absolute;
+    left: 50%;
+    /* top: 0; */
+    bottom: -50px;
+    transform: translate(-50%);
+}
+section.innovation .img-box .inner h3 {
+    background: #fff;
+    padding: 25px 45px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+section.innovation .img-box .inner .bottom {
+    padding: 35px 85px;
+    color: #fff;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+section.innovation .img-box .inner .bottom p {
+    float: left;
+}
+section.innovation .img-box .inner .bottom a {
+    float: right;
+    padding: 7px 30px;
+    background: #ff8342;
+    border-radius: 50px;
+}
+section.innovation .img-box .inner .bottom a:hover {
+    background: #f86010;
+}
+
+
+
+
+
+
