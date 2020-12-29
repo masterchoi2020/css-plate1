@@ -28,6 +28,10 @@ br.mo {
     display: none;
 }
 
+.gnb-mobile {
+    display: none;
+}
+
 /* header */
 header {
     background: rgba(0,0,0,0.2);
@@ -141,7 +145,7 @@ section.main .main-title {
         y-offset :그림자가 y축 방향으로 움직임
         blur :값이 클 수록 흐려진다.
     */
-    text-shadow: 10 0 5px rgba(0,0,0,0.7);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 
 section.main .main-title h2 {
@@ -193,6 +197,9 @@ section.about {
     padding: 80px 0;
 }
 
+/* section의 하위 클래스인 .tittle이 공통으로 스타일링 가능하므로 
+   section.about .title에 적용했던 스타일링을 section  .title 로 변경
+
 section.about .title {
     color: #000;
     text-align: center;
@@ -211,6 +218,28 @@ section.about .title p {
     font-size: 18px;
     color: #555;
 }
+
+*/
+
+section .title {
+    color: #000;
+    text-align: center;
+}
+
+section .title h2 {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+section .title h2 span {
+    color: #ff8342;
+}
+
+section .title p {
+    font-size: 18px;
+    color: #555;
+}
+
 section.about ul {
     /* background: red; */
     width: 1400px;
@@ -220,7 +249,7 @@ section.about ul {
 section.about ul li {
     /* 자식에 float 설정하면 height가 없어진다.*/
     float: left;
-    width: 33.333%;
+    width: 33.3333%;
 }
 section.about ul li a .img-box {
     /* 이미지태그는 항상 박스에 넣어서 사용할 것 
@@ -294,7 +323,8 @@ section.innovation .title h2 span {
     color: #ff8342;
 }
 section.innovation .title p {
-    font-size: 18px;color: #555;
+    font-size: 18px;
+    color: #555;
 }
 section.innovation .img-box {
     width: 1400px;
@@ -342,8 +372,444 @@ section.innovation .img-box .inner .bottom a:hover {
     background: #f86010;
 }
 
+section.me {
+    margin-bottom: 150px;
+    padding: 80px 0;
+    background: url("../img/me.jpg") no-repeat center/cover;
+}
+section.me ul.list {
+    /* 박스 중앙 정렬은 margin의 좌우를 auto로 설정하면 됨(margin: 50px auto;) 
+       단, 조건: 부모의 가로 크기가 자식의 가로크기보다 커야 한다.
+    */
+    width: 1400px;
+    margin: 50px auto;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+section.me ul.list > li {
+    padding: 30px 60px;
+    /* background: orange; */
+}
+
+section.me ul.list > li:first-child {
+    border-bottom: 1px solid #ddd;
+}
+
+section.me ul.list > li h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    /* background: red; */
+    position: relative;
+}
+
+section.me ul.list > li h3 span {
+    color: #ff8342;
+    /* postion:absolute를 이용해 아이콘만 위로 띄어서 바깥으로 이동시킴  */
+    position: absolute;
+    left: -35px;
+}
+
+section.me ul.list > li p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+section.me ul.list > li a.more {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.6;
+    /* a태그는 사용자 편의성(클릭쉽게)을 위해 block 속성 사용 권장
+      inline-block : 텍스트 영역만 블록 속성을 가지도록 해 준다.
+      (또 다른 방법: height를 늘려줘도 됨)
+    */
+    display: inline-block;
+}
+
+section.me ul.list > li a.more span {
+    color: #ff8432;
+    margin-left: 3px;
+    font-size: 14px;
+}
+
+section.me ul.in {
+    margin-bottom: 30px;
+}
+
+section.me ul.in li {
+    margin-bottom: 10px;
+}
+
+section.me ul.in li em {
+    /* 항상 float를 사용하면 clear를 해제해야함을 기억할 것! => 부모태그에 clearfix 설정 */
+    /* em은 inline요소이지만 float속성을 주면 block으로 바뀌게 된다.
+       display:block 이어야만 width가 적용됨을 명심! 할 것!
+    */
+    float: left;
+    width: 12%;
+    font-weight: 700;
+    /* background: orange; */
+}
+
+section.me ul.in li p {
+    float: left;
+    width: 88%;
+    position: relative;
+}
+
+section.me ul.in li p::before {
+    content:"";
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #ff8342;
+    border-radius: 50%;
+
+    position: absolute;
+    left: -40px;
+    top: 8px;
+}
+
+#incruit-btn {
+    /* 일반적으로 버튼은 id로 제어한다(js로 제어) */
+    display: block;
+    width: 280px;
+    background: #ff8432;
+    padding: 10px 0;
+    margin: 0 auto;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 버튼클릭시 생기는 주변의 검은색 테투리 없애기 */
+#incruit-btn:focus {
+    outline: none;
+}
+
+
+/* section sns 스타일링*/
+section.sns {
+    margin-bottom: 60px;
+}
+
+section.sns ul {
+    width: 1400px;
+    margin: 50px auto;
+}
+
+section.sns ul li {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+}
+
+section.sns ul li:last-child {
+    margin-right: 0;
+}
+
+section.sns ul li a {
+    display: block;
+}
+
+section.sns ul li a .img-box {
+    height: 251px;
+    overflow: hidden;
+    position: relative;
+}
+
+section.sns ul li a .img-box::before {
+    content:"";
+    display: block;
+    width: 0;
+    height: 100%;
+    background: rgba(255,131,66,0.85);
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    transition: 0.5s;
+}
+
+section.sns ul li a:hover .img-box::before {
+    width: 100%;
+}
+
+section.sns ul li a .img-box::after {
+    content:"BLOG";
+    font: 15px "Exo 2", sans-serif;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    padding: 5px 30px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    transition: 0.7s;
+}
+
+section.sns ul li a:hover .img-box::after {
+    opacity: 1;
+}
+
+section.sns ul li a .img-box img {
+    width: 100%;
+}
+
+section.sns ul li a .bottom {
+    padding: 20px 0 20px 30px;
+    box-sizing: border-box;
+}
+
+section.sns ul li a .bottom p {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+section.sns ul li a .bottom p.color {
+    color: #ff8342;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+section.sns ul li a .bottom p.time {
+    color: #999;
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+    padding-left: 20px;
+}
+
+section.sns ul li a .bottom p.time::before {
+    content: "\f017";
+    font-family: "Font Awesome 5 Free";
+    font-size: 15px;
+
+    position: absolute;
+    left: 0;
+    top: 4px; 
+}
+
+
+/* footer 스타일링 시작*/
+footer {
+    border-top: 1px solid #999;
+    padding: 30px 0;
+}
+
+footer .inner {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+footer .inner .ft-logo {
+    float: left;
+    width: 14%;
+    height: 100px;
+}
+
+footer .inner .ft-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+footer .inner .address {
+    float: left;
+    margin-left: 100px;
+    margin-top: 24px;
+}
+
+footer .inner .address li:first-child {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+footer .inner .address li:last-child {
+    color: #999;
+}
+
+footer .inner .list {
+    float: right;
+    margin-top: 30px;
+}
+
+footer .inner .list li {
+    float: left;
+    margin-left: 80px;
+}
+
+footer .inner .list li:last-child {
+    font-weight: 700;
+}
+
+footer .inner .list li a:hover {
+    color: #ff8342;
+    text-decoration: underline;
+}
 
 
 
 
+/* 반응형작업 */
+/* 기존의 css에서 화면의 크기에 따라 변경해야 할 부분만 css를 새로 작성해 주면
+   device별 해상도에 맞는 css가 새롭게 적용된다.
+*/
 
+/* 1.노트북 1599px 해상도에 맞춘 반응형 css 작성*/
+@media screen and (max-width: 1599px) {
+    header .inner-header {
+        width: 95%;
+    }
+    header .inner-header .gnb {
+        margin-left: 50px;
+    }
+    header .inner-header .gnb li {
+        margin-right: 40px;
+    }
+    header .inner-header .tnb li {
+        margin-right: 10px;
+    }
+
+    /* 전체 부모 클래스가 .wrap 이므로 .wrap 의 95%로 크기 줄이기 */
+    section.about ul,
+    section.innovation .img-box,
+    section.me ul.list,
+    section.sns ul {
+        width: 95%;
+    }
+
+    footer .inner {
+        width: 95%;
+    }
+    footer .inner .list li {
+        margin-left: 20px;
+    }
+}
+
+
+
+/* 2.태블릿(iPad Pro) 1024px 해상도에 맞춘 반응형 css 작성*/
+@media screen and (max-width: 1024px) {
+    /* 상단 버튼모양 -> 햄거버 버튼으로 변경 */
+    header .inner-header .gnb,
+    header .inner-header .tnb {
+        display: none;
+    }
+
+    header .inner-header .gnb-mobile {
+        display: block;
+        color: #fff;
+        font-size: 40px;
+        float: right;
+    /* 클릭하면 메뉴바가 내려오는 효과는 js를 이용해 작업해야 함 */
+    }
+
+    section.main .main-title {
+        width: 80%;
+    }
+    section.me {
+        margin-bottom: 50px;
+    }
+    section.me ul.list > li p {
+        margin-bottom: 10px;
+    }
+    section.me ul.in li {
+        margin-bottom: 0;
+    }
+    section.me ul.in li p::before {
+        left: -20px;
+    }
+
+    section.sns ul li a .img-box {
+        height: 170px;
+    }
+    footer .inner .ft-logo {
+        margin-top: 20px;
+    }
+    footer .inner .ft-logo img {
+        height: auto;
+    }
+    footer .inner .list {
+        display: none;
+    }
+}
+
+
+
+/* 3.태블릿(iPad) 768px 해상도에 맞춘 반응형 css 작성*/
+
+@media screen and (max-width:768px) {
+    section.main .main-title h2 {
+        font-size: 40px;
+    }
+    section.main .main-title p {
+        font-size: 20px;
+    }
+    section.about {
+        padding: 50px 0;
+    }
+    section.about ul li {
+        float: none;
+        width: 100%;
+    }
+    section.about ul li a .img-box {
+        height: 400px;
+    }
+
+    section.innovation .img-box .inner .bottom {
+        padding: 30px;
+    }
+    section.innovation .img-box .inner .bottom p {
+        float: none;
+        margin-bottom: 30px;
+    }
+    section.innovation .img-box .inner .bottom a {
+        float: none;
+        display: block;
+        width: 100px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    section.me {
+        padding: 50px 0;
+    }
+    section.me ul.in li em {
+        float: none;
+        width: 100%;
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+    section.sns ul li {
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    section.sns ul li a .img-box {
+        height: 300px;
+    }
+    section.sns ul li a .bottom p.time {
+        margin-top: 10px;
+    }
+
+    footer .inner .ft-logo {
+        float: none;
+        width: 30%;
+        margin: 0 auto;
+    }
+    footer .inner .address {
+        float: none;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
