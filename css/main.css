@@ -146,6 +146,21 @@ section.main .main-title {
         blur :값이 클 수록 흐려진다.
     */
     text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+
+    /* 애니메이션 넣기 */
+    animation: main-title-ani 1s;
+}
+@keyframes main-title-ani {
+    /* 애니메이션 진행도가 0%일 경우 */
+    0% {
+        opacity: 0;
+        top: 60%;
+    }
+    /* 애니메이션 진행도가 100%일 경우 */
+    100% {
+        opacity: 1;
+        top: 50%;
+    }
 }
 
 section.main .main-title h2 {
@@ -361,6 +376,7 @@ section.innovation .img-box .inner .bottom {
 
 section.innovation .img-box .inner .bottom p {
     float: left;
+    width: 70%;
 }
 section.innovation .img-box .inner .bottom a {
     float: right;
@@ -772,6 +788,7 @@ footer .inner .list li a:hover {
     section.innovation .img-box .inner .bottom p {
         float: none;
         margin-bottom: 30px;
+        width: 100%;
     }
     section.innovation .img-box .inner .bottom a {
         float: none;
@@ -811,5 +828,148 @@ footer .inner .list li a:hover {
         width: 100%;
         text-align: center;
         margin: 0 auto;
+    }
+}
+
+
+/* 5.모바일(iPhone 6/7/8 plus) 414px 해상도에 맞춘 반응형 css 작성*/
+
+@media screen and (max-width: 414px) {
+
+    header {
+        height: 60px;
+        line-height: 60px;
+    }
+
+    header .inner-header .logo {
+        width: 150px;
+        position: absolute;
+        top: -7px;
+    }
+
+    section.main .main-title h2 {
+        font-size: 30px;
+    }
+
+    section.main .main-title p {
+        font-size: 16px;
+    }
+
+    section.main .main-title .view {
+        width: 150px;
+        font-size: 14px;
+    }
+
+    section .title h2 {
+        font-size: 25px;
+    }
+
+    section .title p {
+        font-size: 14px;
+    }
+
+    section.about {
+        padding: 30px 0;
+    }
+
+    section.about ul li {
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        background: #fafafa;
+        margin-bottom: 10px;
+    }
+
+    section.about ul li a .img-box {
+        height: 300px;
+    }
+
+    section.innovation .img-box {
+        height: 400px;
+    }
+
+    section.me ul.list > li {
+        padding: 20px 20px 20px 45px;
+    }
+
+    section.me ul.list > li p {
+        text-align: justify;
+    }
+
+    section.sns ul li a .img-box {
+        height: 200px;
+    }
+
+    footer {
+        padding: 20px 0;
+    }
+
+    footer .inner .ft-logo {
+        height: 100%;
+    }
+}
+
+
+
+/* 6.모바일(iPhone 5/SE) 320px 해상도에 맞춘 반응형 css 작성*/
+
+@media screen and (max-width: 320px) {
+    
+    br.mo {
+        display: block;
+    }
+
+    .wrap {
+        min-width: 320px;
+    }
+
+    header .inner-header .logo {
+        width: 140px;
+        height: auto;
+    }
+
+    header .inner-header .gnb-mobile {
+        font-size: 32px;
+        margin-right: 15px;
+        position: absolute;
+        right: 0;
+        bottom: 2px;
+    }
+
+    section.main .main-title h2 {
+        font-size: 22px;
+    }
+
+    section.main .main-title p {
+        font-size: 14px;
+    }
+
+    section.about ul li a .img-box {
+        height: 200px;
+    }
+
+    section.about ul li a .text {
+        padding: 15px;
+    }
+
+    section.about ul li a .text h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    section.about ul li a .text p {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    section.innovation .img-box {
+        height: 300px;
+    }
+
+    section.sns ul li a .img-box {
+        height: 170px;
+    }
+
+    section.sns ul li a .bottom {
+        padding: 20px 10px;
     }
 }
