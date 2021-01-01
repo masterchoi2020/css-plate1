@@ -329,7 +329,8 @@ section.about ul li a .text p.more::before {
 section.innovation {
     margin-bottom: 150px;
 }
-section.innovation .title {
+
+/* section.innovation .title {
     color: #000;
     text-align: center;
 }
@@ -344,7 +345,8 @@ section.innovation .title h2 span {
 section.innovation .title p {
     font-size: 18px;
     color: #555;
-}
+} */
+
 section.innovation .img-box {
     width: 1400px;
     height: 540px;
