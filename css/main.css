@@ -126,7 +126,7 @@ section.main {
     height: 100vh;
     background: url("../img/vis_4.jpg") no-repeat center / cover;
     
-    /* 배경화면이 내 눈을 따라가는 듯한 효과 */
+    /* 배경화면이 내 눈을 따라가는 듯한 효과(즉, 그림은 움직이지 않고 스크롤만 움직임) */
     /* 단축속성 background: url("../img/vis_4.jpg") no-repeat center / cover fixed; */
     background-attachment: fixed;
     position: relative;
@@ -195,7 +195,7 @@ section.main .main-title .view::after {
     height: 100%;
     background: rgba(255,255,255,0.4);
     
-    /* float 또는 posion 설정하면 display는 자동으로 block으로 바뀐다니다. */
+    /* float 또는 posion 설정을하면 display는 자동으로 block요소로 바뀌게 된다. */
     /* display: block; */
     position: absolute;
     left: 0;
