@@ -323,7 +323,9 @@ section.about ul li a .text p.more::before {
 
 }
 
-/* section innovation */
+
+
+/* section innovation  */
 section.innovation {
     margin-bottom: 150px;
 }
@@ -390,6 +392,9 @@ section.innovation .img-box .inner .bottom a:hover {
     background: #f86010;
 }
 
+
+
+/* section me 스타일링*/
 section.me {
     margin-bottom: 150px;
     padding: 80px 0;
