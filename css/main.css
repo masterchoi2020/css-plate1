@@ -39,12 +39,12 @@ header {
     background: rgba(0,0,0,0.2);
     width: 100%;
 
-    /* 높이와 line-hight의 크기를 맞추면 내부요소가 중앙으로 떨어진다.(공식처럼 사용됨)*/
-    /* line-hight는 텍스트 요소(linline요소) */
+    /* height(높이)와 line-height의 크기를 동일하게 맞추면 내부요소는 중앙으로 떨어진다.(공식처럼 사용됨)*/
+    /* line-height는 텍스트 요소(inline요소) */
     height: 100px;
     line-height: 100px;
 
-    /* header가 absolute가 되면 붕~ 뜨면서 위로 올라온다.
+    /* header의 position을 absolute로 설정하면 위로 붕~ 뜨면서 올라온다.
       z-index를 주면 main보다 앞으로 나온다.
     */
     /* position: absolute; */
@@ -63,7 +63,7 @@ header .inner-header .logo {
     float: left;
     width: 200px;
 }
-/* 이미지를 조절할 때는 이미지 박스를 조절해서 크기 조절할 것(이미지 자체 수정하지 말것) */
+/* 이미지를 크기를 조절할 때는 이미지 박스의 크기를 통해 조절(이미지 자체 수정하지 말것) */
 header .inner-header .logo img {
     width: 100%;
 }
