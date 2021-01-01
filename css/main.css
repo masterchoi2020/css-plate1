@@ -839,7 +839,7 @@ footer .inner .list li a:hover {
 }
 
 
-/* 5.모바일(iPhone 6/7/8 plus) 414px 해상도에 맞춘 반응형 css 작성*/
+/* 4.모바일(iPhone 6/7/8 plus) 414px 해상도에 맞춘 반응형 css 작성*/
 
 @media screen and (max-width: 414px) {
 
@@ -917,7 +917,7 @@ footer .inner .list li a:hover {
 
 
 
-/* 6.모바일(iPhone 5/SE) 320px 해상도에 맞춘 반응형 css 작성*/
+/* 5.모바일(iPhone 5/SE) 320px 해상도에 맞춘 반응형 css 작성*/
 
 @media screen and (max-width: 320px) {
     
